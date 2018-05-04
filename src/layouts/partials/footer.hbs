@@ -1,0 +1,30 @@
+<hr class="screen-reader-text">
+<footer role="contentinfo">
+    <ul>
+        <li><a href="{{site.home.link}}" title="{{site.home.title}}">{{site.home.text}}</a></li>
+        <li><a href="{{site.about.link}}" title="{{site.about.title}}">{{site.about.text}}</a></li>
+        <li><a href="{{site.codepen.link}}" title="{{site.codepen.title}}">{{site.codepen.text}}</a></li>
+        <li><a href="{{site.github.link}}" title="{{site.github.title}}">{{site.github.text}}</a></li>
+        <li><a id="donate-button" href="#" >Donate</a></li>
+    </ul>
+    <form action="https://metalsmith-talk-stripe-charge-q6x39n6rcutx.runkit.sh/" method="POST">
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_ZP9lWwG3KIOeKkXwJgfCUx4Z"
+        data-amount="1000"
+        data-description="Thanks for the Donation"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-locale="auto"
+        data-label="Donate!">
+      </script>
+    </form>
+    <p>&copy;<span class="screen-reader-text">Creative Commons</span> 2018 Henry Marchall</p>
+</footer>
+
+
+{{#if scripts}}
+    {{#each scripts}}
+        <script src="/{{this}}"></script>
+    {{/each}}
+{{/if}}
+

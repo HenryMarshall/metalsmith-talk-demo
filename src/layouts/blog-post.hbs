@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}">
+{{>html-head}}
+
+<body>
+    {{>header}}
+
+    <main role="main">
+
+        <article>
+            <header>
+                <time datetime="{{strftime date "%F"}}">{{strftime date}}</time>
+                <h1>{{title}}</h1>
+            </header>
+
+            {{{contents}}}
+        </article>
+
+    </main>
+
+    <div id="disqus_thread"></div>
+                                
+    {{>footer}}
+
+<script>
+var disqus_config = function () {
+  this.page.identifier = "{{path}}";
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://metalsmith-talk.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+</body>
+</html>
